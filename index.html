@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Spotify API Player</title>
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<div id="background">
+  <div id="titleBar"><span id="pageTitle">PlaYeR</span></div>
+
+<!-- -->
+
+  <div id="bodyContainer">
+    <div id="searchContainer">
+      <div id="searchBar">
+        <form class="searchForm">
+            <input type="text" placeholder="Search for an Artist" name="artistName" value="" autofocus required>
+            <input type="button" name="searchButton" value="Find">
+        </form>
+      </div>
+      <div class="artistMainPic"></div>
+      <div class="thumbnails">
+
+      </div>
+    </div>
+
+<!-- -->
+
+    <div id="tracksContainer">
+      <div id="tracksBar">
+        <div class="tracksTitle">Top 5 Tracks for:</div>
+      </div>
+      <div class="trackList">
+
+      </div>
+      <div class="songPic">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/actions.js"></script>
+</body>

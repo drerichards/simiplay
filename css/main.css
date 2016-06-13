@@ -1,0 +1,101 @@
+@font-face {
+  font-family: Projects; src: url("../fonts/PROJECTS.TTF");
+}
+
+@font-face {
+  font-family: OCR A Extended; src: url("../fonts/OCRAEXT.TTF");
+}
+
+/**/
+/*Background*/
+#background {
+  background-image: url("../images/concert.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  width: 102%;
+  height: 101%;
+  background-repeat: no-repeat;
+  position: fixed;
+  margin: -8.5px 0 0 -8.5px;
+}
+
+#titleBar {
+  position: absolute;
+  height: 8.5%;
+  width: 100%;
+  background-color: #282727;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+#pageTitle {
+  position: relative;
+  font-family: "Projects";
+  font-size: 40px;
+  color: #ffffff;
+  text-shadow: 2px 2px 3px #f06d06;
+  margin: 10%;
+  top: 15%;
+}
+
+#bodyContainer {
+  height: 100%;
+  width: 70%;
+  clear: both;
+  margin: 0 15%;
+}
+
+#searchContainer {
+  height: 40%;
+  width: 100%;
+  margin-top: 8.5%;
+  clear: both;
+}
+
+#tracksContainer {
+  height: 40%;
+  width: 100%;
+  margin-top: 2.5%;
+}
+
+#searchBar, #tracksBar {
+  height: 12%;
+  width: 100%;
+  background-color: #111111;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"] {
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: "OCR A Extended";
+  font-size: 1.5em;
+  padding: 1%;
+  margin: 0 5%;
+  margin-right: 1%;
+}
+
+input[type="text"]:hover {
+    background: #6E95B5;
+    transition: all 0.5s;
+}
+
+input[type="button"] {
+  font-family: "OCR A Extended";
+  background-color: #f06d06;
+  color: white;
+  font-size: 1.15em;
+}
+
+.tracksTitle {
+  font-family: "OCR A Extended";
+  color: white;
+  text-align: right;
+  margin: 0 5%;
+  font-size: 1.5em;
+  padding: 1%;
+}
+
+div:focus, input:focus{
+    outline: 0;
+}
