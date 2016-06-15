@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Spotify API Player</title>
+	<title>SimiPlay</title>
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 <div id="background">
-  <div id="titleBar"><span id="pageTitle">PlaYeR</span></div>
+  <div id="titleBar"><span id="pageTitle">SiMiPlaY</span></div>
 
 <!-- -->
 
@@ -16,10 +16,16 @@
     <div id="searchContainer">
       <div id="searchBar">
         <form class="searchForm">
-            <input type="text" placeholder="Search for an Artist" name="artistName" value="" autofocus required>
-            <input type="button" name="searchButton" value="Find">
+            <input id="artistName" type="text" placeholder="Search for an Artist"  value="" autofocus required>
+            <input id="searchButton" type="button" value="Find">
         </form>
       </div>
+      <div id="resultList">
+        <ul class="resultColumns">
+
+        </ul>
+      </div>
+
       <div class="artistMainPic"></div>
       <div class="thumbnails">
 

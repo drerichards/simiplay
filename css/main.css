@@ -55,6 +55,7 @@
   height: 40%;
   width: 100%;
   margin-top: 2.5%;
+  visibility: hidden;
 }
 
 #searchBar, #tracksBar {
@@ -71,13 +72,13 @@ input[type="text"] {
   font-family: "OCR A Extended";
   font-size: 1.5em;
   padding: 1%;
-  margin: 0 5%;
+  margin: 0.15% 5%;
   margin-right: 1%;
 }
 
 input[type="text"]:hover {
-    background: #6E95B5;
-    transition: all 0.5s;
+  background: #857E40;
+  transition: all 0.5s;
 }
 
 input[type="button"] {
@@ -85,6 +86,44 @@ input[type="button"] {
   background-color: #f06d06;
   color: white;
   font-size: 1.15em;
+}
+
+#resultList {
+  height: %;
+  width: 90%;
+  margin: 0 5%;
+}
+
+.resultsListBar {
+  height: 5%;
+  width: 100%;
+  background-color: rgba(134, 160, 181, 0.6);
+  font-family: "OCR A Extended";
+  color: white;
+  font-size: 1.1em;
+  padding: 3%;
+  clear: both;
+  transition: all 0.6s;
+}
+
+.resultsListBar:hover {
+  background-color: rgba(149, 178, 201, 1);
+  font-size: 1.2em;
+  transition: all 0.6s;
+}
+
+.resultColumns {
+  margin-top: 0;
+  margin-left: -3%;
+  list-style: none;
+  height: auto;
+  -webkit-column-count: 4;
+     -moz-column-count: 4;
+          column-count: 4;
+}
+
+li:hover {
+  cursor: pointer;
 }
 
 .tracksTitle {
