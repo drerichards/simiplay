@@ -54,8 +54,8 @@
 #tracksContainer {
   height: 40%;
   width: 100%;
-  margin-top: 2.5%;
-  visibility: hidden;
+  margin-top: 4.5%;
+  /*visibility: hidden;*/
 }
 
 #searchBar, #tracksBar {
@@ -89,7 +89,7 @@ input[type="button"] {
 }
 
 #resultList {
-  height: %;
+  height: auto;
   width: 90%;
   margin: 0 5%;
 }
@@ -115,15 +115,19 @@ input[type="button"] {
 .resultColumns {
   margin-top: 0;
   margin-left: -3%;
-  list-style: none;
   height: auto;
   -webkit-column-count: 4;
      -moz-column-count: 4;
           column-count: 4;
 }
 
+li {
+  list-style: none;
+}
+
 li:hover {
   cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
 .tracksTitle {
@@ -136,5 +140,19 @@ li:hover {
 }
 
 div:focus, input:focus{
-    outline: 0;
+  outline: 0;
+}
+.artistMainPic {
+  display: inline-block;
+}
+
+.artistMainPic img {
+  height: 460px;
+  width: 480px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.thumbnailsContainer {
+  display: inline-block;
 }
