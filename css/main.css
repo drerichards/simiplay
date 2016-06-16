@@ -62,7 +62,7 @@ html, body, #container {
 }
 
 #searchBar {
-  height: 12%;
+  height: 9%;
   width: 100%;
   background-color: #111111;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
@@ -70,8 +70,8 @@ html, body, #container {
 
 #tracksBar {
   float: right;
-  margin-top: -2%;
-  height: 12%;
+  margin-top: -1%;
+  height: 9%;
   width: 65%;
   background-color: #111111;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
@@ -86,7 +86,7 @@ html, body, #container {
 form {
   display: flex;
   width: 40%;
-  padding: 0.5%;
+  padding: 0.3%;
 }
 
 input:-webkit-autofill {
@@ -99,7 +99,7 @@ input[type="text"] {
   border: none;
   color: #f06d06;
   font-family: "OCR A Extended";
-  font-size: 1.5em;
+  font-size: 1.1em;
   padding: 0.9%;
   margin: 0.15% 3.5%;
   margin-right: 1%;
@@ -114,7 +114,7 @@ input[type="button"] {
   font-family: "OCR A Extended";
   background-color: #f06d06;
   color: white;
-  font-size: 1.15em;
+  font-size: 1em;
 }
 
 #resultList {
@@ -164,7 +164,7 @@ li:hover {
   color: white;
   text-align: right;
   margin: 0 5%;
-  font-size: 1.5em;
+  font-size: 1.1em;
   padding: 1%;
 }
 
@@ -211,8 +211,8 @@ div:focus, input:focus{
 }
 
 .thumbnailsList li {
-  height: 45%;
-  width: 100%;
+  height: 24%;
+  width: 90%;
 }
 
 .thumbnailsList li img {
@@ -222,12 +222,19 @@ div:focus, input:focus{
 
 .trackDisplay {
   display: inline-block;
-  width: 60%;
+  width: 45%;
+  height: 100%;
+  margin-left: 10%;
+}
+
+.trackList li {
+  height: 5%;
+  width: 100%;
 }
 
 .songBar {
-  height: 5%;
-  width: 98.1%;
+  height: 100%;
+  width: 100%;
   background-color: rgba(40, 39, 39, 0.6);
   font-family: "OCR A Extended";
   color: white;
@@ -245,34 +252,43 @@ div:focus, input:focus{
 }
 
 .songPic {
-  display: inline-block;
-  padding-top: 1%;
-  float: right;
-  margin-right: -8%;
+  width: 100%;
+  height: 100%;
 }
 
 .songPic img {
-  width: 75%;
+  width: 100%;
+  height: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
-.songPic:hover img{
+.songPlay {
+  width: 30%;
+  height: 100%;
+  padding-top: 1%;
+  float: right;
+  margin-right: 10%;
+}
+
+.songPlay .songPic img:hover {
     opacity:0.8;
     transition: all 0.5s;
+}
 
+.songPlay:hover input {
+    display: flex;
+    /*z-index: 1;
+    position: absolute;*/
 }
-.songPic:hover input {
-    display: block;
-}
-.songPic input {
-    position:absolute;
+
+.songPlay input {
     display:none;
 }
-.songPic input.play {
+
+.songPlay input.play {
     top:0;
-    left:0;
 }
-.songPic input.pause {
+.songPlay input.pause {
     top:0;
-    left:79%;
+    float: right;
 }

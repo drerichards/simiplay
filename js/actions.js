@@ -27,7 +27,7 @@ var searchResults = function(searchValue) {
       $.getJSON(simiArtURL, function(data) {
           console.log(data);
           var simiArtData = data.artists;
-          for (var i = 0; i < 10; i++) {
+          for (var i = 0; i < simiArtData.length; i++) {
             var simiArtPic = simiArtData[i].images[1].url;
             $('.thumbnailsList').append('<li><img src="'+simiArtPic+'" /></li>');
           }
@@ -50,14 +50,22 @@ var searchResults = function(searchValue) {
                   var track = topTrackData[i].name;
                   $('.trackList').append('<li><div class="songBar">'+track+'</div></li>');
                 }
-                $('.songPic').html('<img src="'+topTrackData[0].album.images[0].url+'" />');
-                var playBtn = '<input class="play" type="button" value="Play" />';
-                var pauseBtn = '<input class="pause" type="button" value="Update" />';
+                var playBtn = ('<input class="play" type="button" value="Play" />');
+                var pauseBtn = ('<input class="pause" type="button" value="Pause" />');
+                $('.songPic').html('<img src="'+topTrackData[0].album.images[0].url+'" />'+playBtn+pauseBtn);
+
+                var simiDefaultSong = ('<source src="'+topTrackData[0].preview_url+'">');
+                $('.playBtn').onclick = (function () {
+                  simiDefaultSong.play();
+                });
+
+
 
                 $('.trackList li').click(function() {
                   var index = $(this).index();
+                  // var simiDefaultSong = ('<source src="'+topTrackData[index].preview_url+'">');
                   $('.songPic img').remove();
-                  $('.songPic').html('<img src="'+topTrackData[index].album.images[0].url+'" />');
+                  $('.songPic').html('<img src="'+topTrackData[index].album.images[0].url+'" />'+playBtn+pauseBtn);
                 });
               });
           });
