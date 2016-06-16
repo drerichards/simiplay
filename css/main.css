@@ -42,6 +42,7 @@
   width: 70%;
   clear: both;
   margin: 0 15%;
+  vertical-align: middle;
 }
 
 #searchContainer {
@@ -49,13 +50,13 @@
   width: 100%;
   margin-top: 8.5%;
   clear: both;
+  position: relative;
 }
 
 #tracksContainer {
   height: 40%;
   width: 100%;
-  margin-top: 4.5%;
-  /*visibility: hidden;*/
+  visibility: hidden;
 }
 
 #searchBar, #tracksBar {
@@ -121,6 +122,15 @@ input[type="button"] {
           column-count: 4;
 }
 
+.thumbnailsList {
+  margin-top: 0;
+  margin-left: -3%;
+  -webkit-column-count: 5;
+     -moz-column-count: 5;
+          column-count: 5;
+          /*column-gap: 1px;*/
+}
+
 li {
   list-style: none;
 }
@@ -142,17 +152,69 @@ li:hover {
 div:focus, input:focus{
   outline: 0;
 }
+
 .artistMainPic {
   display: inline-block;
+  width: 40%;
+  position: absolute;
 }
 
 .artistMainPic img {
-  height: 460px;
-  width: 480px;
+  width: 70%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
 
 .thumbnailsContainer {
   display: inline-block;
+  width: 60%;
+  float: right;
+  margin-right: 2%;
+}
+
+.thumbnailsList li {
+  margin-right: -3% -6%;
+  margin-top: 0;
+  /*margin-left: -3%;*/
+}
+
+.thumbnailsList li img {
+  width: 177px;
+  height: 177px;
+}
+
+.trackDisplay {
+  display: inline-block;
+  width: 50%;
+}
+
+.songBar {
+  height: 5%;
+  width: 100%;
+  background-color: rgba(40, 39, 39, 0.6);
+  font-family: "OCR A Extended";
+  color: white;
+  font-size: 1.1em;
+  padding: 2%;
+  padding-right: 1%;
+  clear: both;
+  transition: all 0.6s;
+}
+
+.songBar:hover {
+  background-color: rgba(61, 51, 37, 1);
+  font-size: 1.2em;
+  transition: all 0.6s;
+}
+
+.songPic {
+  display: inline-block;
+  padding-top: 1%;
+  float: right;
+  margin-right: -8%;
+}
+
+.songPic img {
+  width: 75%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
