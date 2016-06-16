@@ -12,15 +12,19 @@
   background-image: url("../images/concert.jpg");
   background-size: cover;
   background-position: center bottom;
-  width: 102%;
-  height: 101%;
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   position: fixed;
-  margin: -8.5px 0 0 -8.5px;
+  /*margin: -8.5px 0 0 -8.5px;*/
+}
+
+html, body, #container {
+    height: 100%;
+    width: 100%;
 }
 
 #titleBar {
-  position: absolute;
   height: 8.5%;
   width: 100%;
   background-color: #282727;
@@ -38,19 +42,17 @@
 }
 
 #bodyContainer {
-  height: 100%;
+  height: 90%;
   width: 70%;
   clear: both;
   margin: 0 15%;
-  vertical-align: middle;
 }
 
 #searchContainer {
   height: 40%;
   width: 100%;
-  margin-top: 8.5%;
+  margin-top: 1%;
   clear: both;
-  position: relative;
 }
 
 #tracksContainer {
@@ -59,21 +61,47 @@
   visibility: hidden;
 }
 
-#searchBar, #tracksBar {
+#searchBar {
   height: 12%;
   width: 100%;
   background-color: #111111;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
+#tracksBar {
+  float: right;
+  margin-top: -2%;
+  height: 12%;
+  width: 65%;
+  background-color: #111111;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+#searchSpan, #trackSpan {
+  width: 100%;
+  height: 100%;
+  clear: both;
+}
+
+form {
+  display: flex;
+  width: 40%;
+  padding: 0.5%;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #111111 inset;
+    -webkit-text-fill-color: #f06d06 !important;
+}
+
 input[type="text"] {
   background: transparent;
   border: none;
-  color: white;
+  color: #f06d06;
   font-family: "OCR A Extended";
   font-size: 1.5em;
-  padding: 1%;
-  margin: 0.15% 5%;
+  padding: 0.9%;
+  margin: 0.15% 3.5%;
   margin-right: 1%;
 }
 
@@ -122,15 +150,6 @@ input[type="button"] {
           column-count: 4;
 }
 
-.thumbnailsList {
-  margin-top: 0;
-  margin-left: -3%;
-  -webkit-column-count: 5;
-     -moz-column-count: 5;
-          column-count: 5;
-          /*column-gap: 1px;*/
-}
-
 li {
   list-style: none;
 }
@@ -154,49 +173,67 @@ div:focus, input:focus{
 }
 
 .artistMainPic {
+  width: 33%;
+  height: 95%;
+  padding-left: 1.5%;
   display: inline-block;
-  width: 40%;
-  position: absolute;
 }
 
 .artistMainPic img {
-  width: 70%;
+  width: 100%;
+  height: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
 
 .thumbnailsContainer {
   display: inline-block;
+  height: 90%;
   width: 60%;
   float: right;
-  margin-right: 2%;
+}
+
+.thumbnailsList {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  padding-left: 0px;
+  margin-left: -3%;
+  -webkit-column-count: 5;
+    -moz-column-count: 5;
+      column-count: 5;
+  -webkit-column-gap: 0px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 0px; /* Firefox */
+      column-gap: 0px;
+      -webkit-columns: 5; /* Chrome, Safari, Opera */
+          -moz-columns: 5; /* Firefox */
+          columns: 5;
 }
 
 .thumbnailsList li {
-  margin-right: -3% -6%;
-  margin-top: 0;
-  /*margin-left: -3%;*/
+  height: 45%;
+  width: 100%;
 }
 
 .thumbnailsList li img {
-  width: 177px;
-  height: 177px;
+  width: 100%;
+  height: 100%;
 }
 
 .trackDisplay {
   display: inline-block;
-  width: 50%;
+  width: 60%;
 }
 
 .songBar {
   height: 5%;
-  width: 100%;
+  width: 98.1%;
   background-color: rgba(40, 39, 39, 0.6);
   font-family: "OCR A Extended";
   color: white;
   font-size: 1.1em;
-  padding: 2%;
-  padding-right: 1%;
+  padding: 1.75%;
+  padding-right: 0px;
   clear: both;
   transition: all 0.6s;
 }
@@ -217,4 +254,25 @@ div:focus, input:focus{
 .songPic img {
   width: 75%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.songPic:hover img{
+    opacity:0.8;
+    transition: all 0.5s;
+
+}
+.songPic:hover input {
+    display: block;
+}
+.songPic input {
+    position:absolute;
+    display:none;
+}
+.songPic input.play {
+    top:0;
+    left:0;
+}
+.songPic input.pause {
+    top:0;
+    left:79%;
 }

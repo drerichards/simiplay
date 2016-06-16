@@ -51,7 +51,9 @@ var searchResults = function(searchValue) {
                   $('.trackList').append('<li><div class="songBar">'+track+'</div></li>');
                 }
                 $('.songPic').html('<img src="'+topTrackData[0].album.images[0].url+'" />');
-                
+                var playBtn = '<input class="play" type="button" value="Play" />';
+                var pauseBtn = '<input class="pause" type="button" value="Update" />';
+
                 $('.trackList li').click(function() {
                   var index = $(this).index();
                   $('.songPic img').remove();
