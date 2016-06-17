@@ -54,18 +54,27 @@ var searchResults = function(searchValue) {
                 var pauseBtn = ('<input class="pause" type="button" value="Pause" />');
                 $('.songPic').html('<img src="'+topTrackData[0].album.images[0].url+'" />'+playBtn+pauseBtn);
 
-                var simiDefaultSong = ('<source src="'+topTrackData[0].preview_url+'">');
-                $('.playBtn').onclick = (function () {
-                  simiDefaultSong.play();
-                });
+                function playAudio(index) {
+                  var audio = new Audio(topTrackData[index].preview_url);
+                  audio.play();
 
+                  $('li, .pause').click(function (event) {
+                    event.preventDefault();
+                    audio.pause();
 
+                    $('.play').click(function (event) {
+                      event.preventDefault();
+                      audio.play();
+                    });                  
+                  });
+                }
+                playAudio(0);
 
                 $('.trackList li').click(function() {
                   var index = $(this).index();
-                  // var simiDefaultSong = ('<source src="'+topTrackData[index].preview_url+'">');
                   $('.songPic img').remove();
                   $('.songPic').html('<img src="'+topTrackData[index].album.images[0].url+'" />'+playBtn+pauseBtn);
+                  playAudio(index);
                 });
               });
           });
