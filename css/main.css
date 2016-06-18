@@ -70,7 +70,6 @@ html, body, #container {
 
 #tracksBar {
   float: right;
-  margin-top: -1%;
   height: 9%;
   width: 65%;
   background-color: #111111;
@@ -81,6 +80,7 @@ html, body, #container {
   width: 100%;
   height: 100%;
   clear: both;
+  margin-top: -1%;
 }
 
 form {
@@ -145,9 +145,9 @@ input[type="button"] {
   margin-top: 0;
   margin-left: -3%;
   height: auto;
-  -webkit-column-count: 4;
-     -moz-column-count: 4;
-          column-count: 4;
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
 }
 
 li {
@@ -173,9 +173,9 @@ div:focus, input:focus{
 }
 
 .artistMainPic {
-  width: 33%;
-  height: 95%;
-  padding-left: 1.5%;
+  width: 25%;
+  height: 100%;
+  padding-left: 9%;
   display: inline-block;
 }
 
@@ -198,26 +198,23 @@ div:focus, input:focus{
   height: 100%;
   margin-top: 0;
   padding-left: 0px;
-  margin-left: -3%;
-  -webkit-column-count: 5;
-    -moz-column-count: 5;
-      column-count: 5;
-  -webkit-column-gap: 0px; /* Chrome, Safari, Opera */
-    -moz-column-gap: 0px; /* Firefox */
-      column-gap: 0px;
-      -webkit-columns: 5; /* Chrome, Safari, Opera */
-          -moz-columns: 5; /* Firefox */
-          columns: 5;
+  margin-left: -8.3%;
+  overflow-y: visible;
+  overflow-x: hidden;
 }
 
 .thumbnailsList li {
-  height: 24%;
-  width: 90%;
+  height: 25%;
+  width: auto;
+  margin: 3.25% 0;
+  margin-top: 0;
 }
 
 .thumbnailsList li img {
-  width: 100%;
+  width: 10%;
   height: 100%;
+  padding: 0 2%;
+  margin-bottom: -5%;
   -webkit-transition: all 0.2s linear;
        -moz-transition: all 0.2s linear;
         -ms-transition: all 0.2s linear;
@@ -236,18 +233,18 @@ div:focus, input:focus{
 }
 
 .trackList li {
-  height: 5%;
+  height: 3%;
   width: 100%;
 }
 
 .songBar {
   height: 100%;
-  width: 100%;
+  width: auto;
   background-color: rgba(40, 39, 39, 0.6);
   font-family: "OCR A Extended";
   color: white;
-  font-size: 1.1em;
-  padding: 1.75%;
+  font-size: 1.01em;
+  padding: 1.5%;
   padding-right: 0px;
   clear: both;
   transition: all 0.6s;
@@ -255,7 +252,7 @@ div:focus, input:focus{
 
 .songBar:hover {
   background-color: rgba(61, 51, 37, 1);
-  font-size: 1.2em;
+  font-size: 1.1em;
   transition: all 0.6s;
 }
 
@@ -297,13 +294,40 @@ div.songPlay input {
   z-index: 1;
   position:absolute;
   display:none;
+  transition: all 2s ease-in-out;
 }
 
 div.songPlay input.play {
   top: 80%;
-  left: 64%;
+  left: 65%;
 }
 div.songPlay input.pause {
   top: 80%;
   left: 68%;
+}
+
+.play, .pause {
+  width: 2%;
+  height: 3%;
+}
+
+.thumbnailsList::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	/*background-color: #F5F5F5;*/
+}
+
+.thumbnailsList::-webkit-scrollbar{
+	width: 10px;
+	/*background-color: #F5F5F5;*/
+}
+
+.thumbnailsList::-webkit-scrollbar-thumb{
+	background-color: #F90;
+	background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, .2) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(255, 255, 255, .2) 50%,
+											  rgba(255, 255, 255, .2) 75%,
+											  transparent 75%,
+											  transparent)
 }
