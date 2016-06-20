@@ -16,7 +16,6 @@
   height: 100%;
   background-repeat: no-repeat;
   position: fixed;
-  /*margin: -8.5px 0 0 -8.5px;*/
 }
 
 html, body, #container {
@@ -38,7 +37,6 @@ html, body, #container {
   color: #ffffff;
   text-shadow: 2px 2px 3px #f06d06;
   margin: 10%;
-  top: 15%;
 }
 
 #bodyContainer {
@@ -61,19 +59,26 @@ html, body, #container {
   visibility: hidden;
 }
 
-#searchBar {
+#searchBar, #artistsBar, #tracksBar {
   height: 9%;
-  width: 100%;
   background-color: #111111;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
-#tracksBar {
+#searchBar {
+  width: 100%;
+}
+
+#artistsBar {
   float: right;
-  height: 9%;
   width: 65%;
-  background-color: #111111;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.15%;
+}
+
+#tracksBar {
+  width: 52.85%;
+  position: relative;
+  margin-left: 9%;
 }
 
 #searchSpan, #trackSpan {
@@ -110,7 +115,7 @@ input[type="text"]:hover {
   transition: all 0.5s;
 }
 
-input[type="button"] {
+input[type="submit"] {
   font-family: "OCR A Extended";
   background-color: #f06d06;
   color: white;
@@ -159,13 +164,18 @@ li:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
-.tracksTitle {
+.tracksTitle, .resultsTitle {
   font-family: "OCR A Extended";
   color: white;
-  text-align: right;
-  margin: 0 5%;
+  margin: 0 1%;
   font-size: 1.1em;
   padding: 1%;
+}
+
+.resultsTitle {
+  float: right;
+  font-size: 0.8em;
+  padding-right: 7%;
 }
 
 div:focus, input:focus{
@@ -174,7 +184,7 @@ div:focus, input:focus{
 
 .artistMainPic {
   width: 25%;
-  height: 100%;
+  height: 99%;
   padding-left: 9%;
   display: inline-block;
 }
@@ -227,9 +237,10 @@ div:focus, input:focus{
 
 .trackDisplay {
   display: inline-block;
-  width: 45%;
+  width: 56.3%;
   height: 100%;
-  margin-left: 10%;
+  margin-left: 5.55%;
+  margin-top: -1.33%;
 }
 
 .trackList li {
@@ -240,7 +251,7 @@ div:focus, input:focus{
   border-bottom-width: thin;
 }
 
-.songBar {
+.simiBar, .songBar {
   height: 100%;
   width: auto;
   background-color: rgba(40, 39, 39, 0.6);
@@ -248,12 +259,16 @@ div:focus, input:focus{
   color: white;
   font-size: 1.01em;
   padding: 1%;
-  padding-right: 0px;
   clear: both;
   transition: all 0.6s;
 }
 
-.songBar:hover {
+.songBar {
+  padding-left: 5%;
+  font-size: 0.975em;
+}
+
+.simiBar:hover, .songBar:hover {
   background-color: rgba(61, 51, 37, 1);
   font-size: 1.1em;
   transition: all 0.6s;
@@ -276,11 +291,11 @@ div:focus, input:focus{
 }
 
 div.songPlay {
-  width: 30%;
+  width: 33%;
   height: 100%;
-  padding-top: 1%;
+  margin-top: -2.5%;
   float: right;
-  margin-right: 10%;
+  margin-right: 5%;
 }
 
 .songPic img:hover {
@@ -302,11 +317,11 @@ div.songPlay input {
 
 div.songPlay input.play {
   top: 80%;
-  left: 65%;
+  left: 68%;
 }
 div.songPlay input.pause {
   top: 80%;
-  left: 68%;
+  left: 71%;
 }
 
 .play, .pause {

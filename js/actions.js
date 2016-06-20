@@ -1,40 +1,51 @@
 var searchButton = document.getElementById('searchButton');
+
+// search for the artist
 var searchResults = function(searchValue) {
-  $('.artistMainPic img').remove();
-  $('#tracksContainer').css("visibility","hidden");
-  var params = {
+  $('.artistMainPic img').remove(); //for future searches
+  $('#tracksContainer').css("visibility","hidden"); //shows bottom container
+  var params = { //minimum params to get a list of results for a searched artist
       q: searchValue,
       type: 'artist',
       limit: 20
     };
   url = 'https://api.spotify.com/v1/search';
+
+
+
+  // show results related to the search value
   $.getJSON(url, params, function(data) {
     $('li').remove();
-    console.log(data);
+    // console.log(data);
     var artistObjects = data.artists.items;
-    for (var i = 0; i < artistObjects.length; i++) {
+    for (var i = 0; i < artistObjects.length; i++) { //list results from search
       var resultItems = artistObjects[i].name;
       $('.resultColumns').append('<li><div class="resultsListBar">'+resultItems+'</div></li>');
     }
     $('li').click(function(event) {
       event.preventDefault();
       var index = $(this).index();
-      var artistID = artistObjects[index].id;
+      var artistID = artistObjects[index].id; //takes ID of selected artist to then display similar artists
+      var artistName = artistObjects[index].name;
       var simiArtURL = 'https://api.spotify.com/v1/artists/'+artistID+'/related-artists';
       $('li').toggle(600);
       $('.artistMainPic').html('<img src="'+artistObjects[index].images[1].url+'" />');
 
-      displayTrackPlayer(artistObjects, index, artistID);
+      displayTrackPlayer(artistObjects, index, artistID); //function that displays the tracks of selected artist
 
+
+
+      // get similar artists based on searched artist ID
       $.getJSON(simiArtURL, function(data) {
-          console.log(data);
+          // console.log(data);
           var simiArtData = data.artists;
           for (var i = 0; i < simiArtData.length; i++) {
             var simiArtPic = simiArtData[i].images[1].url;
             var simiArtName = simiArtData[i].name;
-
-            $('.thumbnailsList').append('<li><div class="songBar"><img src="'+simiArtPic+'" />'+simiArtName+'</div></li>');
+            $('.thumbnailsList').append('<li><div class="simiBar"><img src="'+simiArtPic+'" />'+simiArtName+'</div></li>');
           }
+          $('.resultsTitle').html(simiArtData.length+' similar artists found for <strong>'+artistName+'</strong>');
+
           $('.thumbnailsList li').click(function(event) {
             event.preventDefault();
             var index = $(this).index();
@@ -44,31 +55,44 @@ var searchResults = function(searchValue) {
           });
         });
 
+
+
+      // function shows a list of top ten tracks for clicked artist
       function displayTrackPlayer(dataObjects, index, id) {
         var tracksTitle = $('.tracksTitle');
+        //clean up for future search
         $('#tracksContainer').css("visibility","visible");
         $('.trackList li').remove();
         $('.songPic img').remove();
-        tracksTitle.val('');
-        tracksTitle.html('Top 10 Tracks for: <strong>'+dataObjects[index].name+'</strong>');
+
         var topTracksURL = 'https://api.spotify.com/v1/artists/'+id+'/top-tracks?country=SE'
 
+
+
+          // get top tracks of clicked artist
           $.getJSON(topTracksURL, function(data) {
-            console.log(data);
+            // console.log(data);
             var topTrackData = data.tracks;
+            tracksTitle.val('');
+            tracksTitle.html('Top '+ topTrackData.length +' Tracks for: <font color="#54F01D">'+dataObjects[index].name+'</font>');
+
+            // lists tracks
             for (var i = 0; i < topTrackData.length; i++) {
               var track = topTrackData[i].name;
               $('.trackList').append('<li><div class="songBar">'+track+'</div></li>');
             }
+            // adds audio controls to the track's picture
             var playBtn = ('<input class="play" type="image" src="images/play.png" />');
             var pauseBtn = ('<input class="pause" type="image" src="images/pause.png" />');
             $('.songPic').html('<img src="'+topTrackData[0].album.images[0].url+'" />'+playBtn+pauseBtn);
 
+
+            // audio controls function
             function playAudio(index) {
               var audio = new Audio(topTrackData[index].preview_url);
-              audio.currentTime = 0;
               audio.play();
-              $('.pause').click(function (event) {
+
+              $('li, .pause').click(function (event) {
                 event.preventDefault();
                 audio.pause();
               });
@@ -79,22 +103,22 @@ var searchResults = function(searchValue) {
 
               $('#searchButton').click(function (event) {
                 event.preventDefault();
+                //stops audio. should not stop audio if search field is empty
                 audio.pause();
                 audio.currentTime = 0;
-              });
-              $('li').click(function(event) {
-                event.preventDefault();
-                audio.pause();
-                
-                audio.currentTime = 0;
-                var index = $(this).index();
-                $('.songPic img').remove();
-                $('.songPic').html('<img src="'+topTrackData[index].album.images[0].url+'" />'+playBtn+pauseBtn);
-                playAudio(index);
               });
             }
-            playAudio(0);
 
+            $('.trackList li').click(function(event) {
+              event.preventDefault();
+              var index = $(this).index();
+              $('.songPic img').remove();
+              $('.songPic').html('<img src="'+topTrackData[index].album.images[0].url+'" />'+playBtn+pauseBtn);
+              //plays audio of selected track
+              playAudio(index); //<--important
+            });
+            //plays first track audio of searched artist
+            playAudio(0);
           });
         }
     });
@@ -102,19 +126,12 @@ var searchResults = function(searchValue) {
 };
 
 $(document).ready(function() {
-  $('input[type=text]').keyup(function(event){
-    if(event.keyCode == 13) {
+  searchButton.onclick = function(event) {
+    if ($('#artistName').val().length > 0){
       event.preventDefault();
       var searchValue = $('#artistName').val();
       searchResults(searchValue);
       $('#artistName').val('');
-    };
-  });
-
-  searchButton.onclick = function(event) {
-    event.preventDefault();
-    var searchValue = $('#artistName').val();
-    searchResults(searchValue);
-    $('#artistName').val('');
+    }
   }
 });
