@@ -71,14 +71,14 @@ html, body, #container {
 
 #artistsBar {
   float: right;
-  width: 65%;
+  width: 63%;
+  margin-right: 5.25%;
   margin-bottom: 0.15%;
 }
 
 #tracksBar {
-  width: 52.85%;
+  width: 100%;
   position: relative;
-  margin-left: 9%;
 }
 
 #searchSpan, #trackSpan {
@@ -185,7 +185,7 @@ div:focus, input:focus{
 .artistMainPic {
   width: 25%;
   height: 99%;
-  padding-left: 9%;
+  padding-left: 6%;
   display: inline-block;
 }
 
@@ -199,7 +199,7 @@ div:focus, input:focus{
 .thumbnailsContainer {
   display: inline-block;
   height: 90%;
-  width: 60%;
+  width: 63%;
   float: right;
 }
 
@@ -235,12 +235,23 @@ div:focus, input:focus{
   transform: scale(1.1);
 }
 
+.tracksWrapper {
+  width: 55.4%;
+  height: 100%;
+  display: inline-block;
+  padding-left: 6%;
+}
+
 .trackDisplay {
   display: inline-block;
-  width: 56.3%;
+  width: 105%;
   height: 100%;
-  margin-left: 5.55%;
+  margin-left: -4.9%;
   margin-top: -1.33%;
+}
+
+.trackList {
+  margin-top: 1%;
 }
 
 .trackList li {
@@ -277,6 +288,7 @@ div:focus, input:focus{
 .songPic {
   width: 100%;
   height: 100%;
+  margin-top: 8%;
 }
 
 .songPic img {
@@ -295,7 +307,7 @@ div.songPlay {
   height: 100%;
   margin-top: -2.5%;
   float: right;
-  margin-right: 5%;
+  margin-right: 5.4%;
 }
 
 .songPic img:hover {

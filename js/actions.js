@@ -101,7 +101,7 @@ var searchResults = function(searchValue) {
                 audio.play();
               });
 
-              $('#searchButton').click(function (event) {
+              $('#searchButton, .thumbnailsList').click(function (event) {
                 event.preventDefault();
                 //stops audio. should not stop audio if search field is empty
                 audio.pause();
