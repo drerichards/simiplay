@@ -9,7 +9,7 @@ var searchResults = function(searchValue) {
       type: 'artist',
       limit: 20
     };
-  url = 'https://api.spotify.com/v1/search';
+  url = '//api.spotify.com/v1/search';
 
 
 
@@ -27,7 +27,7 @@ var searchResults = function(searchValue) {
       var index = $(this).index();
       var artistID = artistObjects[index].id; //takes ID of selected artist to then display similar artists
       var artistName = artistObjects[index].name;
-      var simiArtURL = 'https://api.spotify.com/v1/artists/'+artistID+'/related-artists';
+      var simiArtURL = '//api.spotify.com/v1/artists/'+artistID+'/related-artists';
       $('li').toggle(600);
       $('.artistMainPic').html('<img src="'+artistObjects[index].images[1].url+'" />');
 
@@ -65,7 +65,7 @@ var searchResults = function(searchValue) {
         $('.trackList li').remove();
         $('.songPic img').remove();
 
-        var topTracksURL = 'https://api.spotify.com/v1/artists/'+id+'/top-tracks?country=SE'
+        var topTracksURL = '//api.spotify.com/v1/artists/'+id+'/top-tracks?country=SE'
 
 
 
