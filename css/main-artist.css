@@ -1,0 +1,277 @@
+@media only screen and (min-width: 320px) {
+    @font-face {
+        font-family: OCR A Extended;
+        src: url("../fonts/Cronus Round.otf");
+        src: url("../fonts/OCRAEXT.TTF");
+    }
+    body, html {
+        margin: 0;
+        position: relative;
+        width: 100%;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    /**/
+    /*Background*/
+    #background {
+        background-image: url("../images/concert.jpg");
+        background-size: cover;
+        background-position: center bottom;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        position: fixed;
+    }
+    #titleBar {
+        /*height: 8.5%;*/
+        width: 100%;
+        background-color: #282727;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    }
+    #pageTitle {
+        position: relative;
+        font-family: "OCR A Extended";
+        font-size: 40px;
+        color: #ffffff;
+        text-shadow: 2px 2px 3px #f06d06;
+        float: right;
+        margin: 1%;
+    }
+    #bodyContainer {
+        height: 90%;
+        width: 100%;
+        margin: auto;
+    }
+    #searchContainer, #tracksContainer {
+        height: 30%;
+        width: 100%;
+        margin-top: 1%;
+        clear: both;
+    }
+    #tracksContainer {
+        height: 50%;
+        position: relative;
+        top: 0.3%;
+        visibility: hidden;
+  }
+    #artistsBar, #searchBar, #tracksBar {
+        background-color: #111111;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    }
+    #searchBar {
+        width: 95%;
+        margin: auto;
+    }
+    #artistsBar {
+        float: right;
+        height: 5%;
+        width: 54.5%;
+        margin-right: 2.5%;
+        margin-bottom: 0.15%;
+    }
+    #tracksBar {
+        width: 100%;
+        position: relative;
+    }
+    #searchSpan, #trackSpan {
+        width: 100%;
+        height: 100%;
+        clear: both;
+            margin-top: -1%;
+    }
+    #trackSpan{
+      margin-top: 1%;
+    }
+    form {
+        display: flex;
+        width: 100%;
+        height: 70%;
+        padding: 1.2%;
+    }
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px #111111 inset;
+        -webkit-text-fill-color: #f06d06 !important;
+    }
+    input[type="text"] {
+        background: transparent;
+border: 1px solid white;
+        color: #f06d06;
+        font-family: "OCR A Extended";
+        font-size: 2em;
+        padding: 0.5%;
+        margin: 0.15% 1% 0.15% 3.5%;
+    }
+    input[type="text"]:hover {
+        background: #857E40;
+        transition: all 0.5s;
+    }
+    input[type="submit"] {
+        font-family: "OCR A Extended";
+        background-color: #f06d06;
+        color: white;
+        font-size: 1.5em;
+    }
+    #resultList {
+        height: auto;
+        width: 90%;
+        margin: 0 5%;
+    }
+    .resultsListBar {
+        height: 5%;
+        width: 100%;
+        background-color: rgba(134, 160, 181, 0.6);
+        font-family: "OCR A Extended";
+        color: white;
+        font-size: 1.1em;
+        padding: 3%;
+        clear: both;
+        transition: all 0.6s;
+    }
+    .resultsListBar:hover {
+        background-color: #95b2c9;
+        font-size: 1.2em;
+        transition: all 0.6s;
+    }
+    .resultColumns {
+        margin-top: 0;
+        margin-left: -3%;
+        height: auto;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+    li {
+        list-style: none;
+    }
+    li:hover {
+        cursor: pointer;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    }
+    .tracksTitle, .resultsTitle {
+        font-family: "OCR A Extended";
+        color: white;
+        margin: 0 1%;
+        font-size: 1.6em;
+        padding: 2%;
+    }
+    .resultsTitle {
+        float: right;
+        font-size: 1.2em;
+        padding-right: 2%;
+      margin: auto;  }
+    div:focus, input:focus {
+        outline: 0;
+    }
+    .artistMainPic {
+        width: 40%;
+        height: 100%;
+        padding-left: 2.5%;
+        display: inline-block;
+    }
+    .artistMainPic img {
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    .thumbnailsContainer {
+        display: inline-block;
+        height: 90%;
+        width: 54.5%;
+        margin-right: 2.5%;
+        float: right;
+    }
+    .thumbnailsList {
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        padding-left: 0;
+        overflow-y: visible;
+        overflow-x: hidden;
+    }
+    .thumbnailsList li {
+        height: 65%;
+        width: 49%;
+        display: inline-flex;
+        background-color: rgba(40, 39, 39, 0.5);
+        margin: 0 0.5% 0.5% 0;
+    }
+    .thumbnailsList li img {
+        width: 100%;
+        height: 100%;
+        vertical-align: baseline;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        -ms-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+    }
+    .thumbnailsList li img:hover {
+        transform: scale(1.1);
+    }
+    .thumbnailsList::-webkit-scrollbar-track, .trackDisplay::-webkit-scrollbar-track  {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        /*background-color: #F5F5F5;*/
+    }
+    .thumbnailsList::-webkit-scrollbar, .trackDisplay::-webkit-scrollbar {
+        width: 10px;
+        /*background-color: #F5F5F5;*/
+    }
+    .thumbnailsList::-webkit-scrollbar-thumb, .trackDisplay::-webkit-scrollbar-thumb {
+        background-color: #F90;
+        background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    }
+}
+
+@media only screen and (min-device-width: 768px) {
+  #pageTitle {
+      font-size: 40px;
+      margin: 2%;
+  }
+  #bodyContainer {
+      height: 90%;
+      width: 95%;
+  }
+  #searchBar {
+      width: 100%;
+  }
+  #searchContainer, #tracksContainer {
+      height: 40%;
+      width: 100%;
+      margin-top: 1%;
+  }
+  #tracksContainer {
+      height: 50%;
+  }
+}
+@media only screen and (min-device-width: 1024px) {
+  #bodyContainer{
+    width: 80%;
+  }
+  .artistMainPic{
+    width: 33%;
+  }
+  .thumbnailsContainer{
+    width: 67%;
+    margin-right: 0;
+  }
+  .thumbnailsList li {
+    height: 65%;
+    width: 24%;
+  }
+  #searchContainer{
+    margin-top: 0;
+  }
+}
+@media only screen and (min-device-width: 1200px) {
+
+}

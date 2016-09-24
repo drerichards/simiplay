@@ -1,0 +1,164 @@
+@media only screen and (min-device-width: 320px) {
+    .tracksWrapper {
+        width: 95%;
+        height: 100%;
+        margin: auto;
+    }
+    .trackDisplay {
+        display: inline-block;
+        width: 100%;
+        height: 60%;
+        margin-top: 63%;
+        overflow-y: visible;
+        overflow-x: hidden;
+    }
+    .trackList {
+        margin-top: 0;
+        padding-left: 0;
+    }
+    .trackList li {
+        height: 3%;
+        width: 100%;
+        border-bottom-style: groove;
+        border-bottom-color: transparent;
+        border-bottom-width: thin;
+    }
+    .simiBar {
+        height: 70%;
+        width: auto;
+        font-family: "OCR A Extended";
+        color: white;
+        font-size: 2em;
+        transition: all 0.6s;
+        text-align: center;
+    }
+    .songBar {
+        height: 100%;
+        width: auto;
+        background-color: rgba(40, 39, 39, 0.6);
+        font-family: "OCR A Extended";
+        color: white;
+        padding: 2%;
+        transition: all 0.6s;
+        padding-left: 5%;
+        font-size: 2.5em;
+    }
+    .simiBar:hover, .songBar:hover {
+        background-color: #3d3325;
+        font-size: 2.25em;
+        transition: all 0.6s;
+    }
+    .songPic {
+        width: 100%;
+        height: 100%;
+    }
+    .songPic img {
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+        -webkit-transition: all 0.5s linear;
+        -moz-transition: all 0.5s linear;
+        -ms-transition: all 0.5s linear;
+        -o-transition: all 0.5s linear;
+        transition: all 0.5s linear;
+    }
+    div.songPlay {
+        width: 63%;
+        height: 73%;
+        margin: auto;
+        margin-top: -72.5%;
+        /*float: right;*/
+        /*margin-right: 5.4%;*/
+    }
+    .songPic img:hover {
+        transition: all 0.5s;
+        /*transform: scale(0.95);*/
+    }
+    div.songPlay:hover input {
+        display: flex;
+        position: absolute;
+    }
+    div.songPlay input {
+        z-index: 1;
+        position: absolute;
+        display: none;
+        transition: all 2s ease-in-out;
+    }
+    div.songPlay input.play {
+        top: 50%;
+        left: 6%;
+    }
+    div.songPlay input.pause {
+        top: 50%;
+        left: 84%;
+    }
+    .pause, .play {
+        width: 10%;
+        height: 10%;
+    }
+}
+
+@media only screen and (min-device-width: 768px) {
+    .tracksWrapper {
+        display: inline;
+    }
+    .trackDisplay {
+        margin-top: 0;
+        width: 58%;
+        height: 85%;
+    }
+    .songBar {
+        font-size: 2em;
+    }
+    div.songPlay {
+        width: 42%;
+        height: 70%;
+        margin-top: 0;
+        float: right;
+        margin-right: 0;
+    }
+    div.songPlay input.play {
+        top: 65%;
+        left: 70%;
+    }
+    div.songPlay input.pause {
+        top: 65%;
+        left: 80%;
+    }
+    .pause, .play {
+        width: 7%;
+        height: 12%;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) {
+    .simiBar {
+        font-size: 1.4em;
+    }
+    .artistMainPic {
+        padding-left: 0;
+    }
+    .songBar {
+        font-size: 1.5em;
+    }
+    .trackDisplay {
+        height: 78%;
+        width: 67%;
+    }
+    div.songPlay {
+        width: 33%;
+        height: 78%;
+    }
+    div.songPlay input.play {
+        top: 75%;
+        left: 75%;
+    }
+    div.songPlay input.pause {
+        top: 75%;
+        left: 85%;
+    }
+    .pause, .play {
+        width: 6%;
+        height: 15%;
+    }
+}
