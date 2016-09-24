@@ -28,7 +28,7 @@
         width: auto;
         font-family: "OCR A Extended";
         color: white;
-        font-size: 2em;
+        font-size: 1.8em;
         transition: all 0.6s;
         text-align: center;
     }
@@ -41,7 +41,7 @@
         padding: 2%;
         transition: all 0.6s;
         padding-left: 5%;
-        font-size: 2.5em;
+        font-size: 2em;
     }
     .simiBar:hover, .songBar:hover {
         background-color: #3d3325;
@@ -66,7 +66,7 @@
         width: 63%;
         height: 73%;
         margin: auto;
-        margin-top: -72.5%;
+        margin-top: -65.5%;
         /*float: right;*/
         /*margin-right: 5.4%;*/
     }
